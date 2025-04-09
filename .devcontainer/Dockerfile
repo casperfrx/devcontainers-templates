@@ -6,7 +6,7 @@ RUN apt-get update \
     # Remove imagemagick due to https://security-tracker.debian.org/tracker/CVE-2019-10131
     && apt-get purge -y imagemagick imagemagick-6-common \
     # This container will also function as somewhat of a test platform for new software, hence the extra packages.
-    && apt-get install -y --install-suggests vim screen ripgrep wget curl gdebi ca-certificates gnupg2 htop \
+    && apt-get install -y --no-install-recommends vim screen ripgrep wget curl gdebi ca-certificates gnupg2 htop \
     # Github CLI: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 	&& mkdir -p -m 755 /etc/apt/keyrings \
         && out=$(mktemp) && wget -nv -O$out https://cli.github.com/packages/githubcli-archive-keyring.gpg \
