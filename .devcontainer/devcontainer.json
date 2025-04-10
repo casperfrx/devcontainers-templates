@@ -3,8 +3,8 @@
 	//	"dockerfile": "./Dockerfile",
 	//	"context": "."
 	// },
-	// "image": "mcr.microsoft.com/devcontainers/javascript-node:1-18-bullseye",
-	"image": "casperfrx/gitpod-devcontainer-devcontainers-templates:1-18-bullseye",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-18-bullseye",
+	// "image": "casperfrx/gitpod-devcontainer-devcontainers-templates:1-18-bullseye",
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
