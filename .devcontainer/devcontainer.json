@@ -3,18 +3,24 @@
 	//	"dockerfile": "./Dockerfile",
 	//	"context": "."
 	// },
-	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-18-bullseye",
-	// "image": "casperfrx/gitpod-devcontainer-devcontainers-templates:1-18-bullseye",
+	// "image": "mcr.microsoft.com/devcontainers/javascript-node:1-18-bullseye",
+	"image": "casperfrx/gitpod-devcontainer-devcontainers-templates:1-18-bullseye",
 	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/tailscale/codespace/tailscale": {},
+		"ghcr.io/devcontainers-extra/features/vscode-cli:1": {},
+		"ghcr.io/devcontainers-extra/features/vscode-server:1": {}	
 	},
+   	"runArgs": ["--device=/dev/net/tun"],
 	"postCreateCommand": "npm install -g @devcontainers/cli",
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"mads-hartmann.bash-ide-vscode",
 				"dbaeumer.vscode-eslint",
-				"editorconfig.editorconfig"
+				"editorconfig.editorconfig",
+				"ms-azuretools.vscode-docker",
 			]
 		}
 	}
