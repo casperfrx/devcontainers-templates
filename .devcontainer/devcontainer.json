@@ -5,14 +5,34 @@
 	// },
 	// "image": "mcr.microsoft.com/devcontainers/javascript-node:1-18-bullseye",
 	"image": "casperfrx/gitpod-devcontainer-devcontainers-templates:1-18-bullseye",
+
+     "containerEnv": {
+         // "MY_VARIABLE": "${localEnv:MY_VARIABLE}",
+         "CODESPACE_NAME": "gitpod-runner -ssh"
+      
+     },
+  
+	
 	"features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
 		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/tailscale/codespace/tailscale": {},
 		"ghcr.io/devcontainers-extra/features/vscode-cli:1": {},
-		"ghcr.io/devcontainers-extra/features/vscode-server:1": {}	
+		"ghcr.io/devcontainers-extra/features/vscode-server:1": {},	
+		 "ghcr.io/devcontainers/features/common-utils:2": {
+	            "installZsh": "true",
+	            "username": "vscode",
+	            "userUid": "1000",
+	            "userGid": "1000",
+	            "upgradePackages": "true"
+	        },
+	        "ghcr.io/devcontainers/features/git:1": {
+	            "version": "latest",
+	            "ppa": "false"
+	        }
 	},
-   	"runArgs": ["--device=/dev/net/tun"],
+   	// "runArgs": ["--device=/dev/net/tun"],
+	
 	"postCreateCommand": "npm install -g @devcontainers/cli",
 	"customizations": {
 		"vscode": {
@@ -20,7 +40,7 @@
 				"mads-hartmann.bash-ide-vscode",
 				"dbaeumer.vscode-eslint",
 				"editorconfig.editorconfig",
-				"ms-azuretools.vscode-docker",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	}
